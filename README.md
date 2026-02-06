@@ -46,19 +46,8 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 4. Play mininet with customized topology
    (1) Customize your topology, create a file named "topo-2sw-2host.py", copy below into the file.
    ```
-   """Custom topology example
-
-Two directly connected switches plus a host for each switch:
-
-   host --- switch --- switch --- host
-
-Adding the 'topos' dict with a key/value pair to generate our newly defined
-topology enables one to pass in '--topo=mytopo' from the command line.
-"""
-
-from mininet.topo import Topo
-
-class MyTopo( Topo ):
+   from mininet.topo import Topo
+   class MyTopo( Topo ):
     "Simple topology example."
 
     def build( self ):
@@ -74,15 +63,13 @@ class MyTopo( Topo ):
         self.addLink( leftHost, leftSwitch )
         self.addLink( leftSwitch, rightSwitch )
         self.addLink( rightSwitch, rightHost )
-
-
-topos = { 'mytopo': ( lambda: MyTopo() ) }
-```
-(2) Run mininet with the customized topology
+   topos = { 'mytopo': ( lambda: MyTopo() ) }
    ```
-sudo mn --custom ~/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
-```
-(3) In the mininet terminal:
+   (2) Run mininet with the customized topology
+   ```
+   sudo mn --custom ~/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
+   ```
+   (3) In the mininet terminal:
    ```
    pingall
    ```
