@@ -77,4 +77,5 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-   
+5. Make ```h1 ping h2``` work
+   [reference](https://mininet.org/walkthrough/)
