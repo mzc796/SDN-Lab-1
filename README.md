@@ -62,7 +62,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
         leftHost = self.addHost( 'h1' )
         rightHost = self.addHost( 'h2' )
         leftSwitch = self.addSwitch( 's1' )
-        rightSwitch = self.addSwitch( 's1' )
+        rightSwitch = self.addSwitch( 's2' )
 
         # Add links
         self.addLink( leftHost, leftSwitch )
