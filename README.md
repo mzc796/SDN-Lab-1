@@ -49,6 +49,10 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
 4. Play mininet with customized topology
+   ```
+   mkdir lab-1
+   cd lab-1
+   ```
    (1) Customize your topology, create a file named "topo-2sw-2host.py", copy below into the file.
    ```
    from mininet.topo import Topo
@@ -72,7 +76,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    (2) Run mininet with the customized topology
    ```
-   sudo mn --custom ~/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
+   sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
    ```
    (3) In the mininet terminal:
    ```
@@ -82,7 +86,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-5. Make ```h1 ping h2``` work
+6. Make ```h1 ping h2``` work
    
    [reference](https://mininet.org/walkthrough/)
 
