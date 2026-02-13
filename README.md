@@ -109,7 +109,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    (3) In the mininet terminal:
    ```
-   pingall
+   h1 ping h2
    ```
    Question: What is the result of `ping`?
    
