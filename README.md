@@ -32,13 +32,13 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    pingall
    ```
-   Question: What is the result?
+>  Question: What is the result?
    
 > (3) Check the flow entries of each switch (e.g., s1). In another system terminal: 
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-   Question: Why do you think the `ping` works?
+>  Question: Why do you think the `ping` works?
    
 > (4) Stop mininet. In the mininet terminal:
    ```
@@ -58,7 +58,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    h1 arp
    ```
-   Keep in mind what you have observed.
+>  Keep in mind what you have observed.
    
 > (4) In the mininet terminal:
    ```
@@ -68,7 +68,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    h1 arp
    ```
-   What do you observe?
+>  What do you observe?
    
 > (6) Question: When we do `ping`, what packets have been exchanged in a sequence? Why?
 
@@ -111,14 +111,14 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    h1 ping h2
    ```
-   Question: What is the result of `ping`?
+>  Question: What is the result of `ping`?
    
 > (4) Check the flow entries of each switch (e.g., s1). In another system terminal: 
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-   Question: Why do you think the `ping` doesn't work this time?
+>  Question: Why do you think the `ping` doesn't work this time?
    
 > (5) Make ```h1 ping h2``` work
 
-   Hint: Refer to the bash scripts of `icmp.sh` and `arp.sh` in this repository.
+>  Hint: Refer to the bash scripts of `icmp.sh` and `arp.sh` in this repository.
