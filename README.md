@@ -37,7 +37,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-   Question: Why do you think the "ping" works out?
+   Question: Why do you think the "ping" works?
    
    (5) Stop mininet. In the mininet terminal:
    ```
@@ -63,7 +63,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    pingall
    ```
-   (5) Check ARP table on each host again. In the mininet termianl
+   (5) Check ARP table on each host again. In the mininet terminal:
    ```
    h1 arp
    ```
@@ -116,10 +116,10 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-   Question: Why do you think the "ping" doesn't work out this time?
+   Question: Why do you think the "ping" doesn't work this time?
    
 8. Make ```h1 ping h2``` work
    
    [reference](https://mininet.org/walkthrough/)
 
-   Hint: Refer to the bash scripts of "icmp.sh" and "arp.sh"
+   Hint: Refer to the bash scripts of "icmp.sh" and "arp.sh".
