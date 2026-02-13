@@ -111,16 +111,16 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    pingall
    ```
-   Question: What is the result of "ping"?
+   Question: What is the result of `ping`?
    
    (3) Check the flow entries of each switch (e.g., s1). In another system terminal: 
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-   Question: Why do you think the "ping" doesn't work this time?
+   Question: Why do you think the `ping` doesn't work this time?
    
-8. Make ```h1 ping h2``` work
+   (4) Make ```h1 ping h2``` work
    
    [reference](https://mininet.org/walkthrough/)
 
-   Hint: Refer to the bash scripts of "icmp.sh" and "arp.sh".
+   Hint: Refer to the bash scripts of `icmp.sh` and `arp.sh` in this repository.
