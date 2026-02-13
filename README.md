@@ -24,33 +24,33 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
   ```
 2. Understand flow entry
    
-> (1) Run mininet with the default topology in the system terminal:
+ (1) Run mininet with the default topology in the system terminal:
    ```
    sudo mn
    ```
-> (2) In the mininet terminal:
+ (2) In the mininet terminal:
    ```
    pingall
    ```
    Question: What is the result?
    
-> (3) Check the flow entries of each switch (e.g., s1). In another system terminal: 
+ (3) Check the flow entries of each switch (e.g., s1). In another system terminal: 
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
    Question: Why do you think the `ping` works?
    
-> (4) Stop mininet. In the mininet terminal:
+ (4) Stop mininet. In the mininet terminal:
    ```
    exit
    ```
 3. Understand `ping` process
    
->  (1) Run mininet with a tree topology
+ (1) Run mininet with a tree topology
    ```
    sudo mn --topo tree,depth=3,fanout=2
    ```
-> (2) Run Wireshark to prepare for capturing the "ping" packets. Question: Which interface do we select to monitor?
+ (2) Run Wireshark to prepare for capturing the "ping" packets. Question: Which interface do we select to monitor?
    ```
    sudo wireshark
    ```
