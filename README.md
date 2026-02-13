@@ -22,8 +22,8 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
   sudo apt-get install mininet
   sudo apt-get install wireshark
   ```
-2. Play mininet with default topology
-   (1) 
+2. Play mininet with 1-switch topology
+   (1) Run mininet with the default topology in the system terminal:
    ```
    sudo mn
    ```
@@ -31,11 +31,13 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    pingall
    ```
-   (3) In another system terminal, we check the flow entries of each switch (e.g., s1). Observe the result and find the reasons:
+   Question: What is the result?
+   
+   (3) Check the flow entries of each switch (e.g., s1). In another system terminal: 
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-   (4) Describe what you observe and why?
+   Question: Why do you think the "ping" works out?
    
    (5) Stop mininet. In the mininet terminal:
    ```
@@ -65,8 +67,14 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    h1 arp
    ```
-   What do you find?
+   What do you observe?
+   
    (6) Question: When we do "ping", what packets have been exchanged in a sequence? Why?
+
+   (7) Stop mininet. In the mininet terminal:
+   ```
+   exit
+   ```
    
 6. Play mininet with customized topology
    ```
@@ -94,7 +102,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
         self.addLink( rightSwitch, rightHost )
    topos = { 'mytopo': ( lambda: MyTopo() ) }
    ```
-   (2) Run mininet with the customized topology
+   (2) Run mininet with the customized topology. In a system terminal:
    ```
    sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
    ```
@@ -102,12 +110,16 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    pingall
    ```
-   (4) Observe the result and find the reasons:
+   Question: What is the result of "ping"?
+   
+   (3) Check the flow entries of each switch (e.g., s1). In another system terminal: 
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-7. Make ```h1 ping h2``` work
+   Question: Why do you think the "ping" doesn't work out this time?
+   
+8. Make ```h1 ping h2``` work
    
    [reference](https://mininet.org/walkthrough/)
 
-   Hint: capture packets with Wireshark to see what is sent when "h1 ping h2".
+   Hint: Refer to the bash scripts of "icmp.sh" and "arp.sh"
