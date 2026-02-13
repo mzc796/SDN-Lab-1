@@ -16,10 +16,11 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 [PICOS 4.4.3 Configuration G](https://pica8-fs.atlassian.net/wiki/spaces/PicOS443sp/overview?homepageId=10453009)
 ## Build and Run Mininet VM
 
-1. Install mininet
+1. Install mininet and wireshark
   ```
   sudo apt-get update
   sudo apt-get install mininet
+  sudo apt-get install wireshark
   ```
 2. Play mininet with default topology
    (1) 
@@ -34,29 +35,35 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-   (4) Install wireshark to capture packets. Describe what you observe and why
+   (4) Describe what you observe and why?
+   (5) Stop mininet. In the mininet terminal:
    ```
-   sudo apt-get install wireshark
+   exit
    ```
 4. Play mininet with preconfigured topology
-   (1)
+   (1) Run mininet with a tree topology
    ```
    sudo mn --topo tree,depth=3,fanout=2
    ```
-   (2) In the mininet terminal:
+   (2) Run Wireshark to prepare for capturing the "ping" packets. Question: Which interface do we select to monitor?
+   ```
+   sudo wireshark
+   ```
+   (3) In the mininet terminal:
    ```
    pingall
    ```
-   (3) Observe the result and find the reasons:
+   (4) Observe the result and find the reasons by checking flow entries on switches:
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-5. Play mininet with customized topology
+   (5) Question: When we do "ping", what packets have been exchanged in a sequence? Why?
+6. Play mininet with customized topology
    ```
    mkdir lab-1
    cd lab-1
    ```
-   (1) Customize your topology, create a file named "topo-2sw-2host.py", copy below into the file.
+   (1) Customize your topology, create a file named "topo-2sw-2host.py", and copy the code below into the file.
    ```
    from mininet.topo import Topo
    class MyTopo( Topo ):
@@ -89,7 +96,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-6. Make ```h1 ping h2``` work
+7. Make ```h1 ping h2``` work
    
    [reference](https://mininet.org/walkthrough/)
 
