@@ -14,15 +14,15 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 
 
 [PICOS 4.4.3 Configuration G](https://pica8-fs.atlassian.net/wiki/spaces/PicOS443sp/overview?homepageId=10453009)
-## Understanding ping with mininet
+## Understanding `ping` process with mininet
 
-1. Install mininet and wireshark
+1. Install mininet and Wireshark
   ```
   sudo apt-get update
   sudo apt-get install mininet
   sudo apt-get install wireshark
   ```
-2. Play mininet with 1-switch topology
+2. Understand flow entry
    
    (1) Run mininet with the default topology in the system terminal:
    ```
@@ -38,13 +38,13 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    sudo ovs-ofctl -O OpenFlow13 dump-flows s1
    ```
-   Question: Why do you think the "ping" works?
+   Question: Why do you think the `ping` works?
    
    (5) Stop mininet. In the mininet terminal:
    ```
    exit
    ```
-4. Play mininet with preconfigured topology
+3. Understand `ping` process
    
    (1) Run mininet with a tree topology
    ```
@@ -70,14 +70,14 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    What do you observe?
    
-   (6) Question: When we do "ping", what packets have been exchanged in a sequence? Why?
+   (6) Question: When we do `ping`, what packets have been exchanged in a sequence? Why?
 
    (7) Stop mininet. In the mininet terminal:
    ```
    exit
    ```
    
-6. Play mininet with customized topology
+4. Manually configure flow entries to make `ping` work
    ```
    mkdir lab-1
    cd lab-1
