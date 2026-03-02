@@ -1,5 +1,28 @@
 # SDN-Lab-1
-Be familiar with Mininet
+This lab uses Mininet for network emulation.
+
+Mininet is an open-source project (http://mininet.org/).
+
+This repository contains original lab instructions and scripts for educational use.
+
+## Learning Objectives
+
+By the end of this lab, students will be able to:
+
+* Explain how Mininet emulates hosts, switches, and links.
+
+* Understand how ping works at Layer 2 and Layer 3.
+
+* Identify the sequence of ARP and ICMP packets during communication.
+
+* Inspect Open vSwitch (OVS) flow tables.
+
+* Explain why traffic may fail when no controller or flow entries exist.
+
+* Manually install OpenFlow rules to enable connectivity.
+
+* Understand the relationship between ARP, ICMP, and forwarding rules.
+
 ## Virtual Machine Summary
 Memory: >= 8GB
 
